@@ -1,13 +1,19 @@
-from django import forms
-from django.forms import ModelForm, SelectDateWidget
+from django.forms import ModelForm
+
+from datetimewidget.widgets import DateWidget
 
 from .models import Appointment
 
 
 class AppointmentForm(ModelForm):
-    date = forms.DateField(widget=SelectDateWidget(
-        empty_label=("Choose Year", "Choose Month", "Choose Day")))
 
     class Meta:
         model = Appointment
         fields = '__all__'
+        widgets = {
+            'date': DateWidget(
+                attrs={'placeholder': "Select appointment date...",
+                       'required': ""},
+                usel10n=True,
+                bootstrap_version=3)
+        }
