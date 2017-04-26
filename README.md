@@ -1,5 +1,10 @@
 # hospital_appointment
-hospital appointment form
+hospital appointment form demo deployed on Heroku  
+
+https://pure-springs-78142.herokuapp.com/appointment_form/
+
+Django admin UI https://pure-springs-78142.herokuapp.com/admin/
+
 
 ### Form looks like: 
 ![form](./doc/img/form.png)
