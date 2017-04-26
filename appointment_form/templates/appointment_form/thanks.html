@@ -1,0 +1,25 @@
+{% extends "appointment_form/base.html" %}
+
+{% block content %}
+    <div class="col-md-4">
+        <h2> Thanks for contacting us, you will be contacted soon.</h2>
+        <hr>
+
+        <table class="table table-condensed">
+            <thead>
+            <tr><th>Name</th><th>Data</th></tr>
+            </thead>
+                <tr>
+                    <td>Appointment number:</td><td>{{ appointment.id }}</td>
+                </tr>
+                <tr>
+                    <td>Date:</td><td>{{ appointment.date }}</td>
+                </tr>
+                <tr>
+                    <td>Doctor:</td><td>{{appointment.doctor.name}} - ({{ appointment.doctor.profession }})</td>
+                </tr>
+        </table>
+
+        <a class="btn btn-primary" href="/appointment_form/" role="button">Return to main form</a>
+    </div>
+{% endblock %}

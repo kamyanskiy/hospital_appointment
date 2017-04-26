@@ -1,6 +1,5 @@
-# utf-8
 from django.db import models
-
+from django.utils import timezone
 
 WORKHOURS_CHOICES = (
     (1, "9:00-10:00"),
@@ -25,19 +24,20 @@ class Doctor(models.Model):
 
 class Appointment(models.Model):
     patient_name = models.CharField(max_length=256,
-                                    help_text="Enter your full name here...")
+                                    help_text="Enter your full name here...",
+                                    )
     patient_phone = models.CharField(max_length=32,
                                      help_text='Enter your phone number '
                                                'here...')
     subject = models.CharField(max_length=256,
                                help_text='Enter your subject here...')
     reason = models.TextField(max_length=1024,
-                              help_text='Describe details of your reason '
+                              help_text='Describe more details of your reason '
                                         'here...')
-    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
-    time = models.IntegerField(max_length=1, choices=WORKHOURS_CHOICES,
-                               default=1)
-    date = models.DateField(auto_now_add=True)
+    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE,
+                               help_text="Select doctor...")
+    time = models.IntegerField(choices=WORKHOURS_CHOICES, default=1)
+    date = models.DateField(default=timezone.now(), editable=True)
 
     def __str__(self):
         return "{0} - {1} - {2}".format(self.patient_name,
