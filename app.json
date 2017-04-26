@@ -1,0 +1,8 @@
+{
+  "name": "Start on Heroku: Python",
+  "description": "A Python app, which can easily be deployed to Heroku.",
+  "image": "heroku/python",
+  "repository": "https://github.com/kamyanskiy/hospital_appointment.git",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ]
+}
