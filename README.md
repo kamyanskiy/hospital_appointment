@@ -10,6 +10,7 @@ Django admin UI https://pure-springs-78142.herokuapp.com/admin/
 $ docker run -d -p 8000:8000 --name website kamyanskiy/hospital
 ```
 http://localhost:8000/appointment_form/
+
 http://localhost:8000/admin/appointment_form/appointment/
 
 
